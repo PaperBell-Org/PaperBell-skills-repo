@@ -1,0 +1,13 @@
+id: claim-figure-ledger
+version: 1.0.0
+title:
+  en: Claim and figure ledger
+  zh: 结论与图件台账
+description:
+  en: Claim ledger (finding → evidence file → robustness → independent review verdict, deletions kept on record) and figure ledger (script, data, projection, compliance checks including China map rules and Nature sizes) as project cards with Bases views.
+  zh: 结论台账（结论 → 证据文件 → 稳健性 → 独立审稿判定，删除的结论保留记录）与图件台账（脚本、数据、投影，含中国地图合规与 Nature 尺寸的检查清单），以项目卡片加 Bases 视图的形式管理。
+tier: community
+agents: [claude-code, github-copilot, openai-codex, gemini-cli]
+requires: [paperbell-note-conventions]
+free: true
+tags: [geospatial, claims, figures, maps, reproducibility]

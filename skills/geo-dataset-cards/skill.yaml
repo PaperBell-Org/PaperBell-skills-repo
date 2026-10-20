@@ -1,0 +1,13 @@
+id: geo-dataset-cards
+version: 1.0.0
+title:
+  en: Geo dataset cards
+  zh: 地理数据集卡片
+description:
+  en: Build and audit CIMPO dataset cards (CRS, resolution, coverage, license, version, verification status, known pitfalls) and study-area cards from README and catalogue material, with a verify-before-use protocol.
+  zh: 从数据说明和目录文档建立并审计 CIMPO 数据集卡片与研究区卡片（坐标系、分辨率、时空覆盖、许可、版本、核验状态、已知陷阱），并规定先核验再使用的规程。
+tier: community
+agents: [claude-code, github-copilot, openai-codex, gemini-cli]
+requires: [paperbell-note-conventions]
+free: true
+tags: [geospatial, datasets, metadata, data-quality, cimpo]

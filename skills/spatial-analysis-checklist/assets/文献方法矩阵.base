@@ -1,0 +1,130 @@
+filters:
+  and:
+    - '!file.inFolder("00 - Obsidian")'
+formulas:
+  文献: if(title, file.asLink(title), file.asLink())
+  方法卡: if(name, file.asLink(name), file.asLink())
+properties:
+  formula.文献:
+    displayName: 文献
+  formula.方法卡:
+    displayName: 方法
+  note.paper_date:
+    displayName: 年
+  note.journal:
+    displayName: 期刊
+  note.keywords:
+    displayName: 关键词（数据 / 方法）
+  note.study_area:
+    displayName: 研究区
+  note.spatial_unit:
+    displayName: 空间单元
+  note.spatial_scale:
+    displayName: 空间尺度
+  note.temporal_scale:
+    displayName: 时间尺度
+  note.crs:
+    displayName: 坐标系
+  note.exposure_metric:
+    displayName: 暴露指标
+  note.outcome:
+    displayName: 结局
+  note.replicable_recipe:
+    displayName: 可照搬
+  note.ch:
+    displayName: 中文名
+  note.venue:
+    displayName: 期刊
+  note.source_paper:
+    displayName: 原文
+  note.used_by:
+    displayName: 用于
+  note.recipe_status:
+    displayName: 状态
+views:
+  - type: table
+    name: 按研究区
+    filters:
+      and:
+        - file.hasTag("paper")
+        - '!study_area.isEmpty()'
+    groupBy:
+      property: study_area
+      direction: ASC
+    order:
+      - formula.文献
+      - paper_date
+      - journal
+      - spatial_unit
+      - spatial_scale
+      - temporal_scale
+      - crs
+      - keywords
+    sort:
+      - property: paper_date
+        direction: DESC
+    columnSize:
+      formula.文献: 360
+  - type: table
+    name: 按空间单元
+    filters:
+      and:
+        - file.hasTag("paper")
+        - '!spatial_unit.isEmpty()'
+    groupBy:
+      property: spatial_unit
+      direction: ASC
+    order:
+      - formula.文献
+      - paper_date
+      - study_area
+      - spatial_scale
+      - exposure_metric
+      - outcome
+      - keywords
+    sort:
+      - property: paper_date
+        direction: DESC
+    columnSize:
+      formula.文献: 360
+  - type: table
+    name: 可照搬的配方
+    filters:
+      and:
+        - file.hasTag("paper")
+        - '!replicable_recipe.isEmpty()'
+        - replicable_recipe == "是"
+    order:
+      - formula.文献
+      - paper_date
+      - journal
+      - keywords
+      - spatial_unit
+      - exposure_metric
+      - outcome
+    sort:
+      - property: paper_date
+        direction: DESC
+    columnSize:
+      formula.文献: 360
+  - type: table
+    name: 方法卡片
+    filters:
+      and:
+        - file.hasTag("method")
+        - file.inFolder("10 - Cards/Methods")
+        - '!file.hasTag("checklist")'
+    order:
+      - formula.方法卡
+      - ch
+      - recipe_status
+      - venue
+      - used_by
+      - source_paper
+      - file.mtime
+    sort:
+      - property: recipe_status
+        direction: ASC
+    columnSize:
+      formula.方法卡: 320
+      note.source_paper: 420

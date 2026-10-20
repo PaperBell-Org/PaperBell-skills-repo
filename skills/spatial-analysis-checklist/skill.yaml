@@ -1,0 +1,13 @@
+id: spatial-analysis-checklist
+version: 1.0.0
+title:
+  en: Spatial analysis checklist
+  zh: 空间分析审稿前检查清单
+description:
+  en: Pre-review self-check for geospatial work across 12 reviewer-favourite topics (MAUP, UGCoP/NEAP, spatial autocorrelation, CRS, spatial-CV leakage, edge effects and more) with Crossref-verified references, plus method cards that copy published methods step by step and geo fields for literature notes.
+  zh: 地理空间研究的审稿前自查：12 个审稿人常问的主题（MAUP、UGCoP/NEAP、空间自相关、坐标系、空间交叉验证泄漏、边缘效应等），文献经 Crossref 核对；附照搬已发表方法的方法卡片和文献地理字段。
+tier: community
+agents: [claude-code, github-copilot, openai-codex, gemini-cli]
+requires: [paperbell-note-conventions]
+free: true
+tags: [geospatial, checklist, methods, literature, peer-review]

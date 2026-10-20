@@ -1,0 +1,22 @@
+{
+  "series_title": "Urban Greening Studies",
+  "lang": "en",
+  "status_root": "/path/to/your/research-projects",
+  "status_file": "STATUS.md",
+  "project_folder": "40 - Projects/Urban Greening Studies",
+  "acronym": "UGS",
+  "projects": [
+    { "folder": "greenspace_access",   "card": "P1 Urban green-space access", "code": "P1" },
+    { "folder": "nightlight_economy",  "card": "P2 Night lights and economy", "code": "P2" },
+    { "folder": "street_view_shade",   "card": "P3 Street-view shade",        "code": "P3" }
+  ],
+  "stale_days": 3,
+  "board_name": "00 Dashboard",
+  "inbox_name": "Decisions",
+  "base_name": "status-board.base",
+  "link_targets": ["STATUS.md", "manuscript", "figures", "reports"],
+  "link_files": false,
+  "overview_file": "",
+  "overview_label": "Overall progress board",
+  "extra_decide_labels": []
+}

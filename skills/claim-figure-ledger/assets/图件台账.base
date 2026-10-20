@@ -1,0 +1,63 @@
+filters:
+  and:
+    - file.hasTag("figure")
+    - file.hasTag("project/<acronym>")
+properties:
+  note.project:
+    displayName: 项目
+  note.workstream:
+    displayName: 子课题
+  note.fig_id:
+    displayName: 图号
+  note.claims:
+    displayName: 支撑的结论
+  note.size:
+    displayName: 尺寸
+  note.projection:
+    displayName: 投影
+  note.review_number:
+    displayName: 审图号
+  note.palette:
+    displayName: 配色
+  note.fig_status:
+    displayName: 状态
+views:
+  - type: table
+    name: 全部图件
+    groupBy:
+      property: note.workstream
+      direction: ASC
+    order:
+      - file.name
+      - note.fig_id
+      - note.claims
+      - note.size
+      - note.projection
+      - note.fig_status
+    sort:
+      - property: note.fig_id
+        direction: ASC
+    columnSize:
+      file.name: 300
+  - type: table
+    name: 未定稿
+    filters:
+      and:
+        - 'fig_status == "草图"'
+    order:
+      - file.name
+      - note.fig_id
+      - note.size
+      - note.palette
+      - note.fig_status
+  - type: table
+    name: 地图
+    filters:
+      and:
+        - 'projection != "无（非地图）"'
+    order:
+      - file.name
+      - note.fig_id
+      - note.projection
+      - note.review_number
+      - note.fig_status

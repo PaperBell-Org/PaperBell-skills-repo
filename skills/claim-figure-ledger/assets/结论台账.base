@@ -1,0 +1,74 @@
+filters:
+  and:
+    - file.hasTag("claim")
+    - file.hasTag("project/<acronym>")
+properties:
+  note.project:
+    displayName: 项目
+  note.workstream:
+    displayName: 子课题
+  note.claim:
+    displayName: 结论
+  note.claim_type:
+    displayName: 类型
+  note.effect:
+    displayName: 效应量
+  note.evidence_path:
+    displayName: 证据文件
+  note.review_verdict:
+    displayName: 审稿判定
+  note.reviewed_on:
+    displayName: 审稿日期
+  note.claim_status:
+    displayName: 状态
+views:
+  - type: table
+    name: 全部结论
+    groupBy:
+      property: note.workstream
+      direction: ASC
+    order:
+      - file.name
+      - note.claim
+      - note.claim_type
+      - note.effect
+      - note.review_verdict
+      - note.claim_status
+    columnSize:
+      file.name: 300
+      note.claim: 360
+      note.effect: 300
+  - type: table
+    name: 未审
+    filters:
+      and:
+        - 'review_verdict == "未审"'
+        - 'claim_status != "已删"'
+    order:
+      - file.name
+      - note.claim
+      - note.claim_type
+      - note.evidence_path
+      - note.claim_status
+  - type: table
+    name: 反直觉
+    filters:
+      and:
+        - 'claim_type == "反直觉"'
+    order:
+      - file.name
+      - note.claim
+      - note.effect
+      - note.review_verdict
+      - note.claim_status
+  - type: table
+    name: 已删
+    filters:
+      or:
+        - 'claim_status == "已删"'
+        - 'review_verdict == "删除"'
+    order:
+      - file.name
+      - note.claim
+      - note.review_verdict
+      - note.reviewed_on

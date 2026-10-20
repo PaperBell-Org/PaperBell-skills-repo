@@ -1,0 +1,13 @@
+id: geo-research-dashboard
+version: 1.0.0
+title:
+  en: Geo research dashboard
+  zh: 地理科研看板
+description:
+  en: One-way sync of per-project STATUS.md files (kept outside the vault by you or an AI coding session) into vault project cards, a dashboard Base and a "needs my decision" inbox.
+  zh: 把 vault 外各项目文件夹里的 STATUS.md 单向同步成库内的项目卡片、一张看板 Base 和“待我决定”收件箱。
+tier: community
+agents: [claude-code, github-copilot, openai-codex, gemini-cli]
+requires: [paperbell-note-conventions]
+free: true
+tags: [geospatial, dashboard, project-management, status, bases]

@@ -1,0 +1,49 @@
+filters:
+  and:
+    - file.hasTag("study-area")
+    - file.inFolder("30 - Metadata/StudyAreas")
+properties:
+  note.level:
+    displayName: Level
+  note.admin_code:
+    displayName: Admin code
+  note.boundary_source:
+    displayName: Boundary source
+  note.crs:
+    displayName: CRS
+  note.climate_zone:
+    displayName: Climate zone
+  note.population:
+    displayName: Population
+  note.used_by:
+    displayName: Used by
+views:
+  - type: table
+    name: All study areas
+    order:
+      - file.name
+      - level
+      - admin_code
+      - boundary_source
+      - crs
+      - climate_zone
+      - population
+      - used_by
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Missing boundary source or admin code
+    filters:
+      or:
+        - boundary_source.isEmpty()
+        - admin_code.isEmpty()
+    order:
+      - file.name
+      - level
+      - admin_code
+      - boundary_source
+      - used_by
+    sort:
+      - property: file.name
+        direction: ASC

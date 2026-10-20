@@ -1,0 +1,9 @@
+id: geo-research-kit
+version: 1.0.0
+title:
+  en: Geospatial research kit
+  zh: 地理空间研究包
+description:
+  en: Adapts a PaperBell vault to geospatial research — a read-only dashboard over project STATUS files, dataset and study-area cards with CRS/license/verification, a pre-review spatial-analysis checklist with method cards, and claim/figure ledgers with map compliance checks.
+  zh: 把 PaperBell 库改造成适合地理空间研究：项目 STATUS 单向汇总成看板与“待我决定”、带坐标系/许可/核验状态的数据集与研究区卡片、空间分析审稿前检查清单与照搬方法卡片、结论台账与含地图合规检查的图件台账。
+skills: [paperbell-note-conventions, geo-research-dashboard, geo-dataset-cards, spatial-analysis-checklist, claim-figure-ledger]

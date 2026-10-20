@@ -1,0 +1,103 @@
+filters:
+  and:
+    - file.hasTag("dataset")
+    - file.inFolder("10 - Cards/Datasets")
+properties:
+  note.provider:
+    displayName: Provider
+  note.data_type:
+    displayName: Type
+  note.crs:
+    displayName: CRS
+  note.spatial_resolution:
+    displayName: Spatial resolution
+  note.temporal_coverage:
+    displayName: Temporal coverage
+  note.temporal_resolution:
+    displayName: Temporal resolution
+  note.license:
+    displayName: License
+  note.version:
+    displayName: Version
+  note.size:
+    displayName: Size
+  note.verified:
+    displayName: Verified
+  note.verified_date:
+    displayName: Verified on
+  note.used_by:
+    displayName: Used by
+  note.sensitive:
+    displayName: Sensitive
+  note.local_path:
+    displayName: Location
+views:
+  - type: table
+    name: All datasets
+    order:
+      - file.name
+      - provider
+      - data_type
+      - crs
+      - spatial_resolution
+      - temporal_coverage
+      - license
+      - version
+      - verified
+      - verified_date
+      - used_by
+      - sensitive
+      - size
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Unverified or issues
+    filters:
+      or:
+        - verified == "unverified"
+        - verified == "issues"
+    order:
+      - file.name
+      - verified
+      - verified_date
+      - provider
+      - data_type
+      - used_by
+      - local_path
+    sort:
+      - property: verified
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Sensitive or restricted
+    filters:
+      and:
+        - sensitive == true
+    order:
+      - file.name
+      - provider
+      - license
+      - verified
+      - used_by
+      - local_path
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Missing CRS or license
+    filters:
+      or:
+        - crs.isEmpty()
+        - license.isEmpty()
+    order:
+      - file.name
+      - data_type
+      - crs
+      - license
+      - verified
+      - provider
+    sort:
+      - property: file.name
+        direction: ASC

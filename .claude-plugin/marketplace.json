@@ -8,6 +8,75 @@
   },
   "plugins": [
     {
+      "name": "claim-figure-ledger",
+      "source": "./",
+      "description": "Claim ledger (finding → evidence file → robustness → independent review verdict, deletions kept on record) and figure ledger (script, data, projection, compliance checks including China map rules and Nature sizes) as project cards with Bases views.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PaperBell-Org"
+      },
+      "homepage": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "repository": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "license": "MIT",
+      "keywords": [
+        "geospatial",
+        "claims",
+        "figures",
+        "maps",
+        "reproducibility"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/claim-figure-ledger"
+      ]
+    },
+    {
+      "name": "geo-dataset-cards",
+      "source": "./",
+      "description": "Build and audit CIMPO dataset cards (CRS, resolution, coverage, license, version, verification status, known pitfalls) and study-area cards from README and catalogue material, with a verify-before-use protocol.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PaperBell-Org"
+      },
+      "homepage": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "repository": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "license": "MIT",
+      "keywords": [
+        "geospatial",
+        "datasets",
+        "metadata",
+        "data-quality",
+        "cimpo"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/geo-dataset-cards"
+      ]
+    },
+    {
+      "name": "geo-research-dashboard",
+      "source": "./",
+      "description": "One-way sync of per-project STATUS.md files (kept outside the vault by you or an AI coding session) into vault project cards, a dashboard Base and a \"needs my decision\" inbox.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PaperBell-Org"
+      },
+      "homepage": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "repository": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "license": "MIT",
+      "keywords": [
+        "geospatial",
+        "dashboard",
+        "project-management",
+        "status",
+        "bases"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/geo-research-dashboard"
+      ]
+    },
+    {
       "name": "paperbell",
       "source": "./",
       "description": "Write a manuscript in the PaperBell Markdown → Pandoc → xelatex export conventions, or convert an existing markdown document to them. Encoding only — never changes what the document says.",
@@ -92,6 +161,29 @@
       ]
     },
     {
+      "name": "spatial-analysis-checklist",
+      "source": "./",
+      "description": "Pre-review self-check for geospatial work across 12 reviewer-favourite topics (MAUP, UGCoP/NEAP, spatial autocorrelation, CRS, spatial-CV leakage, edge effects and more) with Crossref-verified references, plus method cards that copy published methods step by step and geo fields for literature notes.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PaperBell-Org"
+      },
+      "homepage": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "repository": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "license": "MIT",
+      "keywords": [
+        "geospatial",
+        "checklist",
+        "methods",
+        "literature",
+        "peer-review"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/spatial-analysis-checklist"
+      ]
+    },
+    {
       "name": "tables-to-workbook",
       "source": "./",
       "description": "Put every table a manuscript needs into the project's one spreadsheet workbook — one sheet per table, registered with the source of its numbers — and leave only an xlsx-table pointer in the prose.",
@@ -133,6 +225,29 @@
       "strict": false,
       "skills": [
         "./skills/track-changes"
+      ]
+    },
+    {
+      "name": "geo-research-kit",
+      "source": "./",
+      "description": "Adapts a PaperBell vault to geospatial research — a read-only dashboard over project STATUS files, dataset and study-area cards with CRS/license/verification, a pre-review spatial-analysis checklist with method cards, and claim/figure ledgers with map compliance checks.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PaperBell-Org"
+      },
+      "homepage": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "repository": "https://github.com/PaperBell-Org/PaperBell-skills-repo",
+      "license": "MIT",
+      "keywords": [
+        "bundle"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/paperbell-note-conventions",
+        "./skills/geo-research-dashboard",
+        "./skills/geo-dataset-cards",
+        "./skills/spatial-analysis-checklist",
+        "./skills/claim-figure-ledger"
       ]
     },
     {
